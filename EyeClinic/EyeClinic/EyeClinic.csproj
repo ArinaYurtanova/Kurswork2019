@@ -1,0 +1,469 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DA267B8B-486A-4C2A-B681-677F6F82D59B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>EyeClinic</RootNamespace>
+    <AssemblyName>EyeClinic</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net46\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.4.1\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Unity.Abstractions, Version=3.3.1.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net46\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Configuration, Version=5.2.5.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net46\Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.8.13.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net46\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception, Version=5.5.5.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net46\Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception.Configuration, Version=5.1.7.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net46\Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RegistrationByConvention, Version=2.1.9.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net46\Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ServiceLocation, Version=2.1.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net46\Unity.ServiceLocation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Migrations\201901091313103_AddPatient.cs" />
+    <Compile Include="Migrations\201901091313103_AddPatient.Designer.cs">
+      <DependentUpon>201901091313103_AddPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901110857370_AddTherapy.cs" />
+    <Compile Include="Migrations\201901110857370_AddTherapy.Designer.cs">
+      <DependentUpon>201901110857370_AddTherapy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901191558308_AddStatus.cs" />
+    <Compile Include="Migrations\201901191558308_AddStatus.Designer.cs">
+      <DependentUpon>201901191558308_AddStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901200737370_AddGroupAndIllness.cs" />
+    <Compile Include="Migrations\201901200737370_AddGroupAndIllness.Designer.cs">
+      <DependentUpon>201901200737370_AddGroupAndIllness.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901200822485_UpdatePatient.cs" />
+    <Compile Include="Migrations\201901200822485_UpdatePatient.Designer.cs">
+      <DependentUpon>201901200822485_UpdatePatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906091246343_AddUser.cs" />
+    <Compile Include="Migrations\201906091246343_AddUser.Designer.cs">
+      <DependentUpon>201906091246343_AddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906121308044_AddApteka.cs" />
+    <Compile Include="Migrations\201906121308044_AddApteka.Designer.cs">
+      <DependentUpon>201906121308044_AddApteka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906150955515_AddHistory.cs" />
+    <Compile Include="Migrations\201906150955515_AddHistory.Designer.cs">
+      <DependentUpon>201906150955515_AddHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906161627226_newmigr1.cs" />
+    <Compile Include="Migrations\201906161627226_newmigr1.Designer.cs">
+      <DependentUpon>201906161627226_newmigr1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Group.cs" />
+    <Compile Include="Model\Illness.cs" />
+    <Compile Include="Model\MedicalHistory.cs" />
+    <Compile Include="Model\Medication.cs" />
+    <Compile Include="Model\Patient.cs" />
+    <Compile Include="Model\Scheme.cs" />
+    <Compile Include="Model\Status.cs" />
+    <Compile Include="Model\Storage.cs" />
+    <Compile Include="Model\StorageMedication.cs" />
+    <Compile Include="Model\Therapy.cs" />
+    <Compile Include="Model\TherapyScheme.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\DataBaseBackup.cs" />
+    <Compile Include="Service\EyeClinicDBContext.cs" />
+    <Compile Include="Service\Implementation\GroupService.cs" />
+    <Compile Include="Service\Implementation\MedicalHistoryService.cs" />
+    <Compile Include="Service\Implementation\MedicationService.cs" />
+    <Compile Include="Service\Implementation\PatientService.cs" />
+    <Compile Include="Service\Implementation\SchemeService.cs" />
+    <Compile Include="Service\Implementation\StatusService.cs" />
+    <Compile Include="Service\Implementation\StorageService.cs" />
+    <Compile Include="Service\Implementation\TherapyService.cs" />
+    <Compile Include="Service\Implementation\UserService.cs" />
+    <Compile Include="Service\Interface\IGroup.cs" />
+    <Compile Include="Service\Interface\IIllness.cs" />
+    <Compile Include="Service\Interface\IllnessService.cs" />
+    <Compile Include="Service\Interface\IMedicalHistory.cs" />
+    <Compile Include="Service\Interface\IMedication.cs" />
+    <Compile Include="Service\Interface\IStorage.cs" />
+    <Compile Include="Service\Interface\IUser.cs" />
+    <Compile Include="Service\Interface\IScheme.cs" />
+    <Compile Include="Service\Interface\IStatus.cs" />
+    <Compile Include="Service\Interface\ITherapy.cs" />
+    <Compile Include="Service\Interface\IPatient.cs" />
+    <Compile Include="Service\ViewModel\GroupView.cs" />
+    <Compile Include="Service\ViewModel\IllnessView.cs" />
+    <Compile Include="Service\ViewModel\MedicalHistoryView.cs" />
+    <Compile Include="Service\ViewModel\MedicationView.cs" />
+    <Compile Include="Service\ViewModel\PatientView.cs" />
+    <Compile Include="Service\ViewModel\RecipeView.cs" />
+    <Compile Include="Service\ViewModel\SchemeView.cs" />
+    <Compile Include="Service\ViewModel\StatusView.cs" />
+    <Compile Include="Service\ViewModel\StorageMedicationView.cs" />
+    <Compile Include="Service\ViewModel\StoragesLoadView.cs" />
+    <Compile Include="Service\ViewModel\StorageView.cs" />
+    <Compile Include="Service\ViewModel\TherapySchemesView.cs" />
+    <Compile Include="Service\ViewModel\TherapyView.cs" />
+    <Compile Include="Service\ViewModel\UserView.cs" />
+    <Compile Include="View\Apteka\FormMedication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Apteka\FormMedication.Designer.cs">
+      <DependentUpon>FormMedication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Apteka\FormPutOnStorage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Apteka\FormPutOnStorage.Designer.cs">
+      <DependentUpon>FormPutOnStorage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Apteka\FormStorage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Apteka\FormStorage.Designer.cs">
+      <DependentUpon>FormStorage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Apteka\FormStorages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Apteka\FormStorages.Designer.cs">
+      <DependentUpon>FormStorages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Apteka\FormStoragesLoad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Apteka\FormStoragesLoad.Designer.cs">
+      <DependentUpon>FormStoragesLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Doctor\FormAddRecipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Doctor\FormAddRecipe.Designer.cs">
+      <DependentUpon>FormAddRecipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Doctor\FormHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Doctor\FormHistory.Designer.cs">
+      <DependentUpon>FormHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Doctor\FormMainDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Doctor\FormMainDoctor.Designer.cs">
+      <DependentUpon>FormMainDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Meneger\FormAddPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Meneger\FormAddPatient.Designer.cs">
+      <DependentUpon>FormAddPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Meneger\FormDiagramm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Meneger\FormDiagramm.Designer.cs">
+      <DependentUpon>FormDiagramm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Meneger\FormDoctors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Meneger\FormDoctors.Designer.cs">
+      <DependentUpon>FormDoctors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Meneger\FormGroups.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Meneger\FormGroups.Designer.cs">
+      <DependentUpon>FormGroups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Apteka\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Apteka\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Meneger\FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Meneger\FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\FormMainAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Admin\FormMainAdmin.Designer.cs">
+      <DependentUpon>FormMainAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Apteka\FormMainApteka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Apteka\FormMainApteka.Designer.cs">
+      <DependentUpon>FormMainApteka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Apteka\FormMedications.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Apteka\FormMedications.Designer.cs">
+      <DependentUpon>FormMedications.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Meneger\FormProblem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Meneger\FormProblem.Designer.cs">
+      <DependentUpon>FormProblem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Meneger\FormScheme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Meneger\FormScheme.Designer.cs">
+      <DependentUpon>FormScheme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Meneger\FormSchemes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Meneger\FormSchemes.Designer.cs">
+      <DependentUpon>FormSchemes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Meneger\FormSearchPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Meneger\FormSearchPatient.Designer.cs">
+      <DependentUpon>FormSearchPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\FormUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Admin\FormUsers.Designer.cs">
+      <DependentUpon>FormUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\FormGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Admin\FormGroup.Designer.cs">
+      <DependentUpon>FormGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\FormIllness.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Admin\FormIllness.Designer.cs">
+      <DependentUpon>FormIllness.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\FormStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Admin\FormStatus.Designer.cs">
+      <DependentUpon>FormStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Meneger\FormTherapy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Meneger\FormTherapy.Designer.cs">
+      <DependentUpon>FormTherapy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Meneger\FormTherapys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Meneger\FormTherapys.Designer.cs">
+      <DependentUpon>FormTherapys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Meneger\FormTherapySchemes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Meneger\FormTherapySchemes.Designer.cs">
+      <DependentUpon>FormTherapySchemes.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Migrations\201901091313103_AddPatient.resx">
+      <DependentUpon>201901091313103_AddPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901110857370_AddTherapy.resx">
+      <DependentUpon>201901110857370_AddTherapy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901191558308_AddStatus.resx">
+      <DependentUpon>201901191558308_AddStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901200737370_AddGroupAndIllness.resx">
+      <DependentUpon>201901200737370_AddGroupAndIllness.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901200822485_UpdatePatient.resx">
+      <DependentUpon>201901200822485_UpdatePatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906091246343_AddUser.resx">
+      <DependentUpon>201906091246343_AddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906121308044_AddApteka.resx">
+      <DependentUpon>201906121308044_AddApteka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906150955515_AddHistory.resx">
+      <DependentUpon>201906150955515_AddHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906161627226_newmigr1.resx">
+      <DependentUpon>201906161627226_newmigr1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\Apteka\FormMedication.resx">
+      <DependentUpon>FormMedication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Apteka\FormMedications.resx">
+      <DependentUpon>FormMedications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Apteka\FormStorage.resx">
+      <DependentUpon>FormStorage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Doctor\FormAddRecipe.resx">
+      <DependentUpon>FormAddRecipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Doctor\FormHistory.resx">
+      <DependentUpon>FormHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Doctor\FormMainDoctor.resx">
+      <DependentUpon>FormMainDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Meneger\FormAddPatient.resx">
+      <DependentUpon>FormAddPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Meneger\FormDiagramm.resx">
+      <DependentUpon>FormDiagramm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Meneger\FormDoctors.resx">
+      <DependentUpon>FormDoctors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Meneger\FormGroups.resx">
+      <DependentUpon>FormGroups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Apteka\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Meneger\FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\FormMainAdmin.resx">
+      <DependentUpon>FormMainAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Apteka\FormMainApteka.resx">
+      <DependentUpon>FormMainApteka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Meneger\FormProblem.resx">
+      <DependentUpon>FormProblem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Meneger\FormSearchPatient.resx">
+      <DependentUpon>FormSearchPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\FormUsers.resx">
+      <DependentUpon>FormUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\FormStatus.resx">
+      <DependentUpon>FormStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Meneger\FormTherapy.resx">
+      <DependentUpon>FormTherapy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Meneger\FormTherapys.resx">
+      <DependentUpon>FormTherapys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Meneger\FormTherapySchemes.resx">
+      <DependentUpon>FormTherapySchemes.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\глаз.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
